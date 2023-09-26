@@ -12,7 +12,9 @@ class NumberDisplayAdapter: RecyclerView.Adapter<NumberDisplayAdapter.NumberView
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NumberViewHolder {
         return NumberViewHolder(
-            TextView(parent.context)
+            TextView(parent.context).apply {
+                setPadding(0,10,0,10)
+            }
         )
     }
 
@@ -22,7 +24,7 @@ class NumberDisplayAdapter: RecyclerView.Adapter<NumberDisplayAdapter.NumberView
 
     override fun onBindViewHolder(holder: NumberViewHolder, position: Int) {
         holder.textView.text = position.toString()
-
+        holder.textView.textSize = position.toFloat()
     }
 
     //Step 3b: Complete function definitions for adapter
